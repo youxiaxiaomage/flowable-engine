@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -50,7 +50,7 @@
             <groupId>org.flowable</groupId>
             <artifactId>flowable-event-registry</artifactId>
         </dependency>
-       <dependency>
+        <dependency>
             <groupId>org.flowable</groupId>
             <artifactId>flowable-event-registry-configurator</artifactId>
         </dependency>
@@ -101,6 +101,10 @@
         <dependency>
             <groupId>org.flowable</groupId>
             <artifactId>flowable-content-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.flowable</groupId>
+            <artifactId>flowable-variable-service-api</artifactId>
         </dependency>
         <dependency>
             <groupId>org.flowable</groupId>
@@ -502,13 +506,13 @@
                                 <configuration>
                                     <tasks>
                                         <echo
-                                            message="updating flowable configuration to db ${database}" />
+                                                message="updating flowable configuration to db ${database}"/>
                                         <copy
-                                            file="${basedir}/../../qa/db/flowable.cfg.xml"
-                                            todir="target/test-classes"
-                                            overwrite="true">
+                                                file="${basedir}/../../qa/db/flowable.cfg.xml"
+                                                todir="target/test-classes"
+                                                overwrite="true">
                                             <filterset
-                                                filtersfile="${user.home}/.flowable/jdbc/build.flowable6.${database}.properties" />
+                                                    filtersfile="${user.home}/.flowable/jdbc/build.flowable6.${database}.properties"/>
                                         </copy>
                                     </tasks>
                                 </configuration>
@@ -522,10 +526,10 @@
                                 <configuration>
                                     <tasks>
                                         <echo
-                                            message="dropping schema in ${database}" />
+                                                message="dropping schema in ${database}"/>
                                         <java
-                                            classname="org.flowable.engine.impl.db.DbSchemaDrop"
-                                            classpathref="maven.test.classpath" />
+                                                classname="org.flowable.engine.impl.db.DbSchemaDrop"
+                                                classpathref="maven.test.classpath"/>
                                     </tasks>
                                 </configuration>
                             </execution>
@@ -559,13 +563,13 @@
                                 <configuration>
                                     <tasks>
                                         <echo
-                                            message="updating flowable configuration to db ${databasewithschema}" />
+                                                message="updating flowable configuration to db ${databasewithschema}"/>
                                         <copy
-                                            file="${basedir}/../../qa/db/schema/flowable.cfg.xml"
-                                            todir="target/test-classes"
-                                            overwrite="true">
+                                                file="${basedir}/../../qa/db/schema/flowable.cfg.xml"
+                                                todir="target/test-classes"
+                                                overwrite="true">
                                             <filterset
-                                                filtersfile="${user.home}/.flowable/jdbc/build.flowable6.${databasewithschema}.properties" />
+                                                    filtersfile="${user.home}/.flowable/jdbc/build.flowable6.${databasewithschema}.properties"/>
                                         </copy>
                                     </tasks>
                                 </configuration>
@@ -579,10 +583,10 @@
                                 <configuration>
                                     <tasks>
                                         <echo
-                                            message="dropping schema in ${databasewithschema}" />
+                                                message="dropping schema in ${databasewithschema}"/>
                                         <java
-                                            classname="org.flowable.engine.impl.db.DbSchemaDrop"
-                                            classpathref="maven.test.classpath" />
+                                                classname="org.flowable.engine.impl.db.DbSchemaDrop"
+                                                classpathref="maven.test.classpath"/>
                                     </tasks>
                                 </configuration>
                             </execution>
@@ -616,13 +620,13 @@
                                 <configuration>
                                     <tasks>
                                         <echo
-                                            message="updating flowable configuration to db ${databasemssql}" />
+                                                message="updating flowable configuration to db ${databasemssql}"/>
                                         <copy
-                                            file="${basedir}/../../qa/db/flowable.mssql.cfg.xml"
-                                            tofile="target/test-classes/flowable.cfg.xml"
-                                            overwrite="true">
+                                                file="${basedir}/../../qa/db/flowable.mssql.cfg.xml"
+                                                tofile="target/test-classes/flowable.cfg.xml"
+                                                overwrite="true">
                                             <filterset
-                                                filtersfile="${user.home}/.flowable/jdbc/build.flowable6.${databasemssql}.properties" />
+                                                    filtersfile="${user.home}/.flowable/jdbc/build.flowable6.${databasemssql}.properties"/>
                                         </copy>
                                     </tasks>
                                 </configuration>
@@ -636,10 +640,10 @@
                                 <configuration>
                                     <tasks>
                                         <echo
-                                            message="dropping schema in ${databasemssql}" />
+                                                message="dropping schema in ${databasemssql}"/>
                                         <java
-                                            classname="org.flowable.engine.impl.db.DbSchemaDrop"
-                                            classpathref="maven.test.classpath" />
+                                                classname="org.flowable.engine.impl.db.DbSchemaDrop"
+                                                classpathref="maven.test.classpath"/>
                                     </tasks>
                                 </configuration>
                             </execution>
@@ -666,7 +670,7 @@
                 <plugins>
                     <plugin>
                         <artifactId>maven-antrun-plugin</artifactId>
-                        
+
                         <version>1.4</version>
                         <executions>
                             <execution>
@@ -678,13 +682,13 @@
                                 <configuration>
                                     <tasks>
                                         <echo
-                                            message="updating flowable configuration to db ${databaseasynchistory}" />
+                                                message="updating flowable configuration to db ${databaseasynchistory}"/>
                                         <copy
-                                            file="${basedir}/../../qa/asynchistory/flowable.cfg.xml"
-                                            todir="target/test-classes"
-                                            overwrite="true">
+                                                file="${basedir}/../../qa/asynchistory/flowable.cfg.xml"
+                                                todir="target/test-classes"
+                                                overwrite="true">
                                             <filterset
-                                                filtersfile="${user.home}/.flowable/jdbc/build.flowable6.${databaseasynchistory}.properties" />
+                                                    filtersfile="${user.home}/.flowable/jdbc/build.flowable6.${databaseasynchistory}.properties"/>
                                         </copy>
                                     </tasks>
                                 </configuration>
@@ -698,10 +702,10 @@
                                 <configuration>
                                     <tasks>
                                         <echo
-                                            message="dropping schema in ${databaseasynchistory}" />
+                                                message="dropping schema in ${databaseasynchistory}"/>
                                         <java
-                                            classname="org.flowable.engine.impl.db.DbSchemaDrop"
-                                            classpathref="maven.test.classpath" />
+                                                classname="org.flowable.engine.impl.db.DbSchemaDrop"
+                                                classpathref="maven.test.classpath"/>
                                     </tasks>
                                 </configuration>
                             </execution>
@@ -741,13 +745,13 @@
                                 <configuration>
                                     <tasks>
                                         <echo
-                                            message="updating flowable configuration to db ${databasewithschemaasynchistory}" />
+                                                message="updating flowable configuration to db ${databasewithschemaasynchistory}"/>
                                         <copy
-                                            file="${basedir}/../../qa/asynchistory/schema/flowable.cfg.xml"
-                                            todir="target/test-classes"
-                                            overwrite="true">
+                                                file="${basedir}/../../qa/asynchistory/schema/flowable.cfg.xml"
+                                                todir="target/test-classes"
+                                                overwrite="true">
                                             <filterset
-                                                filtersfile="${user.home}/.flowable/jdbc/build.flowable6.${databasewithschemaasynchistory}.properties" />
+                                                    filtersfile="${user.home}/.flowable/jdbc/build.flowable6.${databasewithschemaasynchistory}.properties"/>
                                         </copy>
                                     </tasks>
                                 </configuration>
@@ -761,10 +765,10 @@
                                 <configuration>
                                     <tasks>
                                         <echo
-                                            message="dropping schema in ${databasewithschemaasynchistory}" />
+                                                message="dropping schema in ${databasewithschemaasynchistory}"/>
                                         <java
-                                            classname="org.flowable.engine.impl.db.DbSchemaDrop"
-                                            classpathref="maven.test.classpath" />
+                                                classname="org.flowable.engine.impl.db.DbSchemaDrop"
+                                                classpathref="maven.test.classpath"/>
                                     </tasks>
                                 </configuration>
                             </execution>
@@ -804,13 +808,13 @@
                                 <configuration>
                                     <tasks>
                                         <echo
-                                            message="updating flowable configuration to db ${databasemssqlasynchistory}" />
+                                                message="updating flowable configuration to db ${databasemssqlasynchistory}"/>
                                         <copy
-                                            file="${basedir}/../../qa/asynchistory/mssql/flowable.cfg.xml"
-                                            todir="target/test-classes"
-                                            overwrite="true">
+                                                file="${basedir}/../../qa/asynchistory/mssql/flowable.cfg.xml"
+                                                todir="target/test-classes"
+                                                overwrite="true">
                                             <filterset
-                                                filtersfile="${user.home}/.flowable/jdbc/build.flowable6.${databasemssqlasynchistory}.properties" />
+                                                    filtersfile="${user.home}/.flowable/jdbc/build.flowable6.${databasemssqlasynchistory}.properties"/>
                                         </copy>
                                     </tasks>
                                 </configuration>
@@ -841,13 +845,13 @@
                                 <configuration>
                                     <tasks>
                                         <echo
-                                            message="updating flowable configuration config to db ${database}" />
+                                                message="updating flowable configuration config to db ${database}"/>
                                         <copy
-                                            file="${basedir}/../../qa/spring/${database}/flowable.cfg.xml"
-                                            todir="target/test-classes"
-                                            overwrite="true">
+                                                file="${basedir}/../../qa/spring/${database}/flowable.cfg.xml"
+                                                todir="target/test-classes"
+                                                overwrite="true">
                                             <filterset
-                                                filtersfile="${user.home}/.flowable/jdbc/build.flowable6.${database}.properties" />
+                                                    filtersfile="${user.home}/.flowable/jdbc/build.flowable6.${database}.properties"/>
                                         </copy>
                                     </tasks>
                                 </configuration>
@@ -861,10 +865,10 @@
                                 <configuration>
                                     <tasks>
                                         <echo
-                                            message="dropping schema in ${database}" />
+                                                message="dropping schema in ${database}"/>
                                         <java
-                                            classname="org.flowable.engine.impl.db.DbSchemaDrop"
-                                            classpathref="maven.test.classpath" />
+                                                classname="org.flowable.engine.impl.db.DbSchemaDrop"
+                                                classpathref="maven.test.classpath"/>
                                     </tasks>
                                 </configuration>
                             </execution>
@@ -913,15 +917,15 @@
                                 <configuration>
                                     <tasks>
                                         <echo
-                                            message="Copying jta enabled Flowable configuration file to target/test-classes" />
+                                                message="Copying jta enabled Flowable configuration file to target/test-classes"/>
                                         <echo
-                                            message="Updating flowable configuration config to db ${database}" />
+                                                message="Updating flowable configuration config to db ${database}"/>
                                         <copy
-                                            file="${basedir}/../../qa/jta/${database}/flowable.cfg.xml"
-                                            todir="target/test-classes"
-                                            overwrite="true">
+                                                file="${basedir}/../../qa/jta/${database}/flowable.cfg.xml"
+                                                todir="target/test-classes"
+                                                overwrite="true">
                                             <filterset
-                                                filtersfile="${user.home}/.flowable/jdbc/build.flowable6.${database}.properties" />
+                                                    filtersfile="${user.home}/.flowable/jdbc/build.flowable6.${database}.properties"/>
                                         </copy>
                                     </tasks>
                                 </configuration>
@@ -935,10 +939,10 @@
                                 <configuration>
                                     <tasks>
                                         <echo
-                                            message="dropping schema in ${database}" />
+                                                message="dropping schema in ${database}"/>
                                         <java
-                                            classname="org.flowable.engine.impl.db.DbSchemaDrop"
-                                            classpathref="maven.test.classpath" />
+                                                classname="org.flowable.engine.impl.db.DbSchemaDrop"
+                                                classpathref="maven.test.classpath"/>
                                     </tasks>
                                 </configuration>
                             </execution>
@@ -987,11 +991,11 @@
                                 <configuration>
                                     <tasks>
                                         <echo
-                                            message="updating flowable configuration to qa/cfg/historyfull.flowable.cfg.xml" />
+                                                message="updating flowable configuration to qa/cfg/historyfull.flowable.cfg.xml"/>
                                         <copy
-                                            file="${basedir}/../../qa/cfg/historyfull.flowable.cfg.xml"
-                                            tofile="target/test-classes/flowable.cfg.xml"
-                                            overwrite="true" />
+                                                file="${basedir}/../../qa/cfg/historyfull.flowable.cfg.xml"
+                                                tofile="target/test-classes/flowable.cfg.xml"
+                                                overwrite="true"/>
                                     </tasks>
                                 </configuration>
                             </execution>
@@ -1002,10 +1006,14 @@
                         <configuration>
                             <excludes>
                                 <exclude>**/*TestCase.java</exclude>
-                                <exclude>**/CompetingJobAcquisitionTest.java</exclude> <!-- http://jira.codehaus.org/browse/ACT-234 -->
-                                <exclude>**/WSDLImporterTest.java</exclude> <!-- http://jira.codehaus.org/browse/ACT-315 -->
-                                <exclude>**/JobExecutorTest.java</exclude> <!-- http://jira.codehaus.org/browse/ACT-427 -->
-                                <exclude>**/HistoricTaskInstanceUpdateTest.java</exclude> <!-- http://jira.codehaus.org/browse/ACT-485 -->
+                                <exclude>**/CompetingJobAcquisitionTest.java
+                                </exclude> <!-- http://jira.codehaus.org/browse/ACT-234 -->
+                                <exclude>**/WSDLImporterTest.java
+                                </exclude> <!-- http://jira.codehaus.org/browse/ACT-315 -->
+                                <exclude>**/JobExecutorTest.java
+                                </exclude> <!-- http://jira.codehaus.org/browse/ACT-427 -->
+                                <exclude>**/HistoricTaskInstanceUpdateTest.java
+                                </exclude> <!-- http://jira.codehaus.org/browse/ACT-485 -->
                                 <exclude>**/RepeatingServiceTaskTest.java</exclude>
                                 <exclude>org/flowable/standalone/**</exclude>
                                 <exclude>**/FlowableJupiterSubclassTest.java</exclude>
@@ -1036,17 +1044,17 @@
                                 <configuration>
                                     <tasks>
                                         <echo
-                                            message="updating flowable configuration to db ${database}, using FULL history" />
+                                                message="updating flowable configuration to db ${database}, using FULL history"/>
                                         <copy
-                                            file="${basedir}/../../qa/db/historyfull.flowable.cfg.xml"
-                                            todir="target/test-classes"
-                                            overwrite="true">
+                                                file="${basedir}/../../qa/db/historyfull.flowable.cfg.xml"
+                                                todir="target/test-classes"
+                                                overwrite="true">
                                             <filterset
-                                                filtersfile="${user.home}/.flowable/jdbc/build.flowable6.${database}.properties" />
+                                                    filtersfile="${user.home}/.flowable/jdbc/build.flowable6.${database}.properties"/>
                                         </copy>
                                         <rename
-                                            src="target/test-classes/historyfull.flowable.cfg.xml"
-                                            dest="target/test-classes/flowable.cfg.xml" />
+                                                src="target/test-classes/historyfull.flowable.cfg.xml"
+                                                dest="target/test-classes/flowable.cfg.xml"/>
                                     </tasks>
                                 </configuration>
                             </execution>
@@ -1059,10 +1067,10 @@
                                 <configuration>
                                     <tasks>
                                         <echo
-                                            message="dropping schema in ${database}" />
+                                                message="dropping schema in ${database}"/>
                                         <java
-                                            classname="org.flowable.engine.impl.db.DbSchemaDrop"
-                                            classpathref="maven.test.classpath" />
+                                                classname="org.flowable.engine.impl.db.DbSchemaDrop"
+                                                classpathref="maven.test.classpath"/>
                                     </tasks>
                                 </configuration>
                             </execution>
@@ -1075,10 +1083,10 @@
                                 <configuration>
                                     <tasks>
                                         <echo
-                                            message="dropping schema in ${database}" />
+                                                message="dropping schema in ${database}"/>
                                         <java
-                                            classname="org.flowable.engine.impl.db.DbSchemaDrop"
-                                            classpathref="maven.test.classpath" />
+                                                classname="org.flowable.engine.impl.db.DbSchemaDrop"
+                                                classpathref="maven.test.classpath"/>
                                     </tasks>
                                 </configuration>
                             </execution>
@@ -1108,17 +1116,17 @@
                                 <configuration>
                                     <tasks>
                                         <echo
-                                            message="updating flowable configuration to db ${database}, using FULL history" />
+                                                message="updating flowable configuration to db ${database}, using FULL history"/>
                                         <copy
-                                            file="${basedir}/../../qa/db/historyfull-with-schema.flowable.cfg.xml"
-                                            todir="target/test-classes"
-                                            overwrite="true">
+                                                file="${basedir}/../../qa/db/historyfull-with-schema.flowable.cfg.xml"
+                                                todir="target/test-classes"
+                                                overwrite="true">
                                             <filterset
-                                                filtersfile="${user.home}/.flowable/jdbc/build.flowable6.${databasewithschema}.properties" />
+                                                    filtersfile="${user.home}/.flowable/jdbc/build.flowable6.${databasewithschema}.properties"/>
                                         </copy>
                                         <rename
-                                            src="target/test-classes/historyfull-with-schema.flowable.cfg.xml"
-                                            dest="target/test-classes/flowable.cfg.xml" />
+                                                src="target/test-classes/historyfull-with-schema.flowable.cfg.xml"
+                                                dest="target/test-classes/flowable.cfg.xml"/>
                                     </tasks>
                                 </configuration>
                             </execution>
@@ -1131,10 +1139,10 @@
                                 <configuration>
                                     <tasks>
                                         <echo
-                                            message="dropping schema in ${databasewithschema}" />
+                                                message="dropping schema in ${databasewithschema}"/>
                                         <java
-                                            classname="org.flowable.engine.impl.db.DbSchemaDrop"
-                                            classpathref="maven.test.classpath" />
+                                                classname="org.flowable.engine.impl.db.DbSchemaDrop"
+                                                classpathref="maven.test.classpath"/>
                                     </tasks>
                                 </configuration>
                             </execution>
@@ -1147,10 +1155,10 @@
                                 <configuration>
                                     <tasks>
                                         <echo
-                                            message="dropping schema in ${databasewithschema}" />
+                                                message="dropping schema in ${databasewithschema}"/>
                                         <java
-                                            classname="org.flowable.engine.impl.db.DbSchemaDrop"
-                                            classpathref="maven.test.classpath" />
+                                                classname="org.flowable.engine.impl.db.DbSchemaDrop"
+                                                classpathref="maven.test.classpath"/>
                                     </tasks>
                                 </configuration>
                             </execution>
@@ -1178,11 +1186,11 @@
                                 <configuration>
                                     <tasks>
                                         <echo
-                                            message="updating flowable configuration to qa/cfg/historyaudit.flowable.cfg.xml" />
+                                                message="updating flowable configuration to qa/cfg/historyaudit.flowable.cfg.xml"/>
                                         <copy
-                                            file="${basedir}/../../qa/cfg/historyaudit.flowable.cfg.xml"
-                                            tofile="target/test-classes/flowable.cfg.xml"
-                                            overwrite="true" />
+                                                file="${basedir}/../../qa/cfg/historyaudit.flowable.cfg.xml"
+                                                tofile="target/test-classes/flowable.cfg.xml"
+                                                overwrite="true"/>
                                     </tasks>
                                 </configuration>
                             </execution>
@@ -1193,10 +1201,14 @@
                         <configuration>
                             <excludes>
                                 <exclude>**/*TestCase.java</exclude>
-                                <exclude>**/CompetingJobAcquisitionTest.java</exclude> <!-- http://jira.codehaus.org/browse/ACT-234 -->
-                                <exclude>**/WSDLImporterTest.java</exclude> <!-- http://jira.codehaus.org/browse/ACT-315 -->
-                                <exclude>**/JobExecutorTest.java</exclude> <!-- http://jira.codehaus.org/browse/ACT-427 -->
-                                <exclude>**/HistoricTaskInstanceUpdateTest.java</exclude> <!-- http://jira.codehaus.org/browse/ACT-485 -->
+                                <exclude>**/CompetingJobAcquisitionTest.java
+                                </exclude> <!-- http://jira.codehaus.org/browse/ACT-234 -->
+                                <exclude>**/WSDLImporterTest.java
+                                </exclude> <!-- http://jira.codehaus.org/browse/ACT-315 -->
+                                <exclude>**/JobExecutorTest.java
+                                </exclude> <!-- http://jira.codehaus.org/browse/ACT-427 -->
+                                <exclude>**/HistoricTaskInstanceUpdateTest.java
+                                </exclude> <!-- http://jira.codehaus.org/browse/ACT-485 -->
                                 <exclude>**/RepeatingServiceTaskTest.java</exclude>
                                 <exclude>org/flowable/standalone/**</exclude>
                                 <exclude>**/FlowableJupiterSubclassTest.java</exclude>
@@ -1226,11 +1238,11 @@
                                 <configuration>
                                     <tasks>
                                         <echo
-                                            message="updating flowable configuration to qa/cfg/historynone.flowable.cfg.xml" />
+                                                message="updating flowable configuration to qa/cfg/historynone.flowable.cfg.xml"/>
                                         <copy
-                                            file="${basedir}/../../qa/cfg/historynone.flowable.cfg.xml"
-                                            tofile="target/test-classes/flowable.cfg.xml"
-                                            overwrite="true" />
+                                                file="${basedir}/../../qa/cfg/historynone.flowable.cfg.xml"
+                                                tofile="target/test-classes/flowable.cfg.xml"
+                                                overwrite="true"/>
                                     </tasks>
                                 </configuration>
                             </execution>
@@ -1241,10 +1253,14 @@
                         <configuration>
                             <excludes>
                                 <exclude>**/*TestCase.java</exclude>
-                                <exclude>**/CompetingJobAcquisitionTest.java</exclude> <!-- http://jira.codehaus.org/browse/ACT-234 -->
-                                <exclude>**/WSDLImporterTest.java</exclude> <!-- http://jira.codehaus.org/browse/ACT-315 -->
-                                <exclude>**/JobExecutorTest.java</exclude> <!-- http://jira.codehaus.org/browse/ACT-427 -->
-                                <exclude>**/HistoricTaskInstanceUpdateTest.java</exclude> <!-- http://jira.codehaus.org/browse/ACT-485 -->
+                                <exclude>**/CompetingJobAcquisitionTest.java
+                                </exclude> <!-- http://jira.codehaus.org/browse/ACT-234 -->
+                                <exclude>**/WSDLImporterTest.java
+                                </exclude> <!-- http://jira.codehaus.org/browse/ACT-315 -->
+                                <exclude>**/JobExecutorTest.java
+                                </exclude> <!-- http://jira.codehaus.org/browse/ACT-427 -->
+                                <exclude>**/HistoricTaskInstanceUpdateTest.java
+                                </exclude> <!-- http://jira.codehaus.org/browse/ACT-485 -->
                                 <exclude>**/Historic*InstanceTest.java</exclude>
                                 <exclude>**/HistoryServiceTest.java</exclude>
                                 <exclude>**/HistoryLevelServiceTest.java</exclude>
@@ -1287,11 +1303,11 @@
                                 <configuration>
                                     <tasks>
                                         <echo
-                                            message="updating flowable configuration to qa/cfg/historyasync.flowable.cfg.xml" />
+                                                message="updating flowable configuration to qa/cfg/historyasync.flowable.cfg.xml"/>
                                         <copy
-                                            file="${basedir}/../../qa/cfg/historyasync.flowable.cfg.xml"
-                                            tofile="target/test-classes/flowable.cfg.xml"
-                                            overwrite="true" />
+                                                file="${basedir}/../../qa/cfg/historyasync.flowable.cfg.xml"
+                                                tofile="target/test-classes/flowable.cfg.xml"
+                                                overwrite="true"/>
                                     </tasks>
                                 </configuration>
                             </execution>
@@ -1302,16 +1318,21 @@
                         <configuration>
                             <excludes>
                                 <exclude>**/*TestCase.java</exclude>
-                                <exclude>**/CompetingJobAcquisitionTest.java</exclude> <!-- http://jira.codehaus.org/browse/ACT-234 -->
-                                <exclude>**/WSDLImporterTest.java</exclude> <!-- http://jira.codehaus.org/browse/ACT-315 -->
-                                <exclude>**/JobExecutorTest.java</exclude> <!-- http://jira.codehaus.org/browse/ACT-427 -->
-                                <exclude>**/HistoricTaskInstanceUpdateTest.java</exclude> <!-- http://jira.codehaus.org/browse/ACT-485 -->
+                                <exclude>**/CompetingJobAcquisitionTest.java
+                                </exclude> <!-- http://jira.codehaus.org/browse/ACT-234 -->
+                                <exclude>**/WSDLImporterTest.java
+                                </exclude> <!-- http://jira.codehaus.org/browse/ACT-315 -->
+                                <exclude>**/JobExecutorTest.java
+                                </exclude> <!-- http://jira.codehaus.org/browse/ACT-427 -->
+                                <exclude>**/HistoricTaskInstanceUpdateTest.java
+                                </exclude> <!-- http://jira.codehaus.org/browse/ACT-485 -->
                                 <exclude>**/RepeatingServiceTaskTest.java</exclude>
                                 <exclude>org/flowable/standalone/**</exclude>
                                 <exclude>**/ProcessInstanceMigration*Test.java</exclude>
                                 <exclude>**/CacheTaskTest.java</exclude>
                                 <exclude>**/CompensateEventTest</exclude> <!-- Needs investigation -->
-                                <exclude>**/MultipleExternalWorkerAcquireServiceTaskTest</exclude> <!-- Fails occasionally when system has lots of concurrency. Excluded, as the external workers don't use async history -->
+                                <exclude>**/MultipleExternalWorkerAcquireServiceTaskTest
+                                </exclude> <!-- Fails occasionally when system has lots of concurrency. Excluded, as the external workers don't use async history -->
                             </excludes>
                             <argLine>${argLine} -Xmx5g</argLine>
                         </configuration>
@@ -1335,7 +1356,7 @@
                             <includes>
                                 <include>**/JdbcMetaDataTest.java</include>
                             </includes>
-                            <excludes />
+                            <excludes/>
                         </configuration>
                     </plugin>
                     <plugin>
@@ -1351,22 +1372,22 @@
                                 <configuration>
                                     <tasks>
                                         <echo
-                                            message="creating db schema in ${metadatabase}" />
+                                                message="creating db schema in ${metadatabase}"/>
                                         <ant
-                                            antfile="${basedir}/../../qa/db/build.xml"
-                                            target="create.db.schema">
+                                                antfile="${basedir}/../../qa/db/build.xml"
+                                                target="create.db.schema">
                                             <property name="test_classpath"
-                                                refid="maven.test.classpath" />
+                                                      refid="maven.test.classpath"/>
                                             <property name="database"
-                                                value="${metadatabase}" />
+                                                      value="${metadatabase}"/>
                                         </ant>
                                         <echo
-                                            message="updating flowable cfg to ${metadatabase}" />
+                                                message="updating flowable cfg to ${metadatabase}"/>
                                         <ant
-                                            antfile="${basedir}/../../qa/db/build.xml"
-                                            target="create.cfg">
+                                                antfile="${basedir}/../../qa/db/build.xml"
+                                                target="create.cfg">
                                             <property name="database"
-                                                value="${metadatabase}" />
+                                                      value="${metadatabase}"/>
                                         </ant>
                                     </tasks>
                                 </configuration>
@@ -1380,15 +1401,15 @@
                                 <configuration>
                                     <tasks>
                                         <echo
-                                            message="dropping schema in ${metadatabase}" />
+                                                message="dropping schema in ${metadatabase}"/>
                                         <ant
-                                            antfile="${basedir}/../../qa/db/build.xml"
-                                            target="drop.db.schema"
-                                            inheritAll="false">
+                                                antfile="${basedir}/../../qa/db/build.xml"
+                                                target="drop.db.schema"
+                                                inheritAll="false">
                                             <property name="test_classpath"
-                                                refid="maven.test.classpath" />
+                                                      refid="maven.test.classpath"/>
                                             <property name="database"
-                                                value="${metadatabase}" />
+                                                      value="${metadatabase}"/>
                                         </ant>
                                     </tasks>
                                 </configuration>
@@ -1417,11 +1438,11 @@
                                 <configuration>
                                     <tasks>
                                         <echo
-                                            message="updating flowable configuration to qa/cfg/optimizations.flowable.cfg.xml" />
+                                                message="updating flowable configuration to qa/cfg/optimizations.flowable.cfg.xml"/>
                                         <copy
-                                            file="${basedir}/../../qa/cfg/optimizations.flowable.cfg.xml"
-                                            tofile="target/test-classes/flowable.cfg.xml"
-                                            overwrite="true" />
+                                                file="${basedir}/../../qa/cfg/optimizations.flowable.cfg.xml"
+                                                tofile="target/test-classes/flowable.cfg.xml"
+                                                overwrite="true"/>
                                     </tasks>
                                 </configuration>
                             </execution>
@@ -1603,11 +1624,11 @@
                                 <configuration>
                                     <tasks>
                                         <echo
-                                            message="updating log4j configuration to error logging" />
+                                                message="updating log4j configuration to error logging"/>
                                         <copy
-                                            file="${basedir}/../../qa/logging/log4j.properties"
-                                            todir="target/test-classes"
-                                            overwrite="true" />
+                                                file="${basedir}/../../qa/logging/log4j.properties"
+                                                todir="target/test-classes"
+                                                overwrite="true"/>
                                     </tasks>
                                 </configuration>
                             </execution>
@@ -1616,7 +1637,7 @@
                 </plugins>
             </build>
         </profile>
-        
+
         <profile>
             <id>mongodb</id>
             <dependencies>
@@ -1641,11 +1662,11 @@
                                 <configuration>
                                     <tasks>
                                         <echo
-                                            message="updating flowable configuration to mongodb.flowable.cfg.xml" />
+                                                message="updating flowable configuration to mongodb.flowable.cfg.xml"/>
                                         <copy
-                                            file="${basedir}/../../qa/mongodb/mongodb.flowable.cfg.xml"
-                                            tofile="target/test-classes/flowable.cfg.xml"
-                                            overwrite="true" />
+                                                file="${basedir}/../../qa/mongodb/mongodb.flowable.cfg.xml"
+                                                tofile="target/test-classes/flowable.cfg.xml"
+                                                overwrite="true"/>
                                     </tasks>
                                 </configuration>
                             </execution>
